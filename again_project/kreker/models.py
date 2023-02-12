@@ -28,6 +28,7 @@ class Actor(models.Model):
 
     def get_absolute_url(self):
         return reverse_lazy('one_actor', kwargs={'pk':self.pk})
+        # return reverse_lazy('one_actor', kwargs={'pk':self.pk})
 
 class Director(models.Model):
     first_name = models.CharField(max_length=100)
