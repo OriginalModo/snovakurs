@@ -1,0 +1,12 @@
+{% extends 'book_app/base.html' %}
+
+{% block title %} Книги {% endblock title %}
+
+{% block content %}
+    <h1>Снова книги</h1>
+    {% for book in books %}
+    <ul>
+        <li><a href="{{ book.get_absolute_url }}">{{ book.title }}</a>, <a href="{{ book.get_absolute_url }}">рейтинг</a> - {{ book.rating }}, Автор - {{ book.author }}, Продажи - {{ book.is_best_selling }}</li>
+    </ul>
+    {% endfor %}
+{% endblock content %}

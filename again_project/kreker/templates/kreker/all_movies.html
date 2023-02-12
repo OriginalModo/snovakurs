@@ -1,0 +1,17 @@
+{% extends 'kreker/base.html' %}
+
+{% block title %} ВСЕ ФИЛЬМЫ {% endblock title %}
+
+{% block content %} 
+
+    <h1>Список всех фильмов</h1>
+    <ul>
+        {% for movie in movies %}
+            <li><a href="{{ movie.get_absolute_url }}">{{movie.name}}</a>, Рейтинг - {{movie.rating}}, год - {{movie.year|default:'Нет года'}}</li>
+
+        {% endfor %}
+    </ul>
+
+{% endblock content %}
+
+

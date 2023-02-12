@@ -1,0 +1,17 @@
+{% extends 'kreker/base.html' %}
+
+{% block title %} ВСЕ ФИЛЬМЫ {% endblock title %}
+
+{% block content %} 
+
+    <h1>Список всех режиссеров</h1>
+    <ul>
+        {% for director in object_list %}
+        <li><a href="{{director.get_absolute_url}}">{{ director.first_name }} {{ director.last_name }}</a></li>
+
+        {% endfor %}
+    </ul>
+
+{% endblock content %}
+
+

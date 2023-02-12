@@ -1,0 +1,27 @@
+{% extends 'kreker/base.html' %}
+
+
+{% block title %} Актер {% endblock title %}
+
+
+{% block content %}
+    {% if actor.gender == actor.MALE %}
+    <h1>Актер</h1>
+    <h2>Имя {{ object.first_name }}</h2>
+    <h2>Фамилия {{ object.last_name }}</h2>
+    <h2>Пол {{ object.gender }}</h2>
+    {% else %}
+    <h1>Актриса</h1>
+    <h2>Имя {{ actor.first_name }}</h2>
+    <h2>Фамилия {{ actor.last_name }}</h2>
+    <h2>Пол {{ actor.gender }}</h2>
+    {% endif %}
+    <hr>
+    <h1>Список фильмов</h1>
+    <ul>
+        {% for act in actor.movie_set.all %}
+        <li>{{ act }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}

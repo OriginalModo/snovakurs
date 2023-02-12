@@ -1,0 +1,12 @@
+{% extends 'feedback/base.html' %}
+
+{% block title %} Дбавление файла в галлерею {% endblock title %}
+
+{% block content %}
+  <h2>Загрузите файл</h2>
+  <form action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+     {{ form }}
+      <button type="submit">Отправить</button>
+  </form>
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends 'kreker/base.html' %}
+
+{% block title %} ФИЛЬМ {% endblock title %}
+
+{% block content %} 
+
+    <h1>ФИЛЬМ</h1>
+    <h2>Имя - {{movie.name}}</h2>
+    <h2>Рейтинг - {{movie.rating}}</h2>
+    <h2>Год - {{movie.year}}</h2>
+    <h2>Бюджет - {{movie.budget}}</h2>
+    <hr>
+    <h2>Инфо о режиссере</h2>
+    <h2>Имя {{ movie.director.first_name}}</h2>
+    <h2>Фамилия {{ movie.director.last_name}}</h2>
+    <h2>Почта {{ movie.director.director_email}}</h2>
+    <hr>
+    <h2>Список Актеров</h2>
+    <ul>
+        {% for actor in movie.actors.all %}
+        <li>{{ actor }}</li>
+        {% endfor %}
+    </ul>
+
+
+
+
+{% endblock content %}
+
+

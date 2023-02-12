@@ -1,0 +1,25 @@
+{% extends 'feedback/base.html' %}
+
+{% block title %} Все отзывы {% endblock title %}
+
+{% block content %}
+<table>
+    <caption><h1>Все отзывы</h1></caption>
+
+{% for feedback in object_list %}
+     <tr>
+         <td> id: {{ feedback.pk }}</td>
+         <td>{{ feedback.surname }}</td>
+         <td>{{ feedback.feedback }}</td>
+         <td>{{ feedback.rating }}</td>
+    </tr>
+{% endfor %}
+</table>
+
+
+
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% extends 'kreker/base.html' %}
+
+
+{% block title %} {% endblock title %}
+
+
+{% block content %}
+<h1>Список всех актеров</h1>
+<ul>
+    {% for actor in object_list %}
+    <li><a href="{{ actor.get_absolute_url }}">{% if actor.gender == actor.MALE%}
+        Актер {{ actor.first_name }} {{ actor.last_name }}
+        {% else %}
+        Актриса {{ actor.first_name }} {{ actor.last_name }}
+        {% endif %}
+    </a></li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
