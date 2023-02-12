@@ -34,6 +34,7 @@ class Director(models.Model):
     last_name = models.CharField(max_length=100)
     director_email = models.EmailField(default='sugardaddy')
     # slug = models.SlugField(default='', null=False, db_index=True, unique=True)
+    # slug = models.SlugField(default='', null=False, db_index=True, unique=True)
 
 
     def __str__(self):
